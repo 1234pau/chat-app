@@ -1,0 +1,32 @@
+label {
+    position: absolute;
+    left: -99999px;
+}
+
+.SearchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchBar {
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    outline: none;
+    padding: 5px;
+    background-color: var(--darkModeLeftNav);
+    border-bottom: 2px solid rgb(94, 94, 94);
+    color: #b0b3b8;
+}
+
+#searchBar:focus {
+    background-color: transparent;
+    border: 1px solid rgb(94, 94, 94);
+    border-bottom: 2px solid rgba(102, 172, 111, 0.836);
+}
+
+#searchBar::placeholder {
+    font-size: 15px;
+}

@@ -1,0 +1,225 @@
+/************SCROLL BARR***********************/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+    box-shadow: inset 0 0 6px #5e606175;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3a3b3c;
+    border-radius: 10px;
+}
+
+
+/************SCROLL BARR***********************/
+
+.Messages {
+    height: 100vh;
+    width: calc(100% - 400px);
+    background-image: url("../assets/jeremy-bishop-uAfZBP-GtiA-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 400px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Messages::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+}
+
+.Messages::before {
+    filter: opacity(95%);
+}
+
+.personStatusContainer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 30px 0 0 20px;
+    background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.95));
+    margin-bottom: 20px;
+}
+
+.personStatusContainer img {
+    margin-right: 10px;
+}
+
+.personName p {
+    color: white;
+    font-weight: 700;
+}
+
+.personName p:nth-child(2) {
+    color: rgb(179, 179, 179);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+/*********************CONTAINER MESSAGES*******************/
+
+.ContainerMessages {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    position: relative;
+    z-index: 3;
+    background-color: rgb(10, 73, 57);
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    word-break: break-all;
+    margin-bottom: 15px;
+}
+
+.message h2 {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.message p {
+    font-size: 10px;
+    font-weight: 200;
+    color: rgb(223, 222, 222);
+    float: right;
+    margin-top: -10px;
+}
+
+.message::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    margin-top: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(10, 73, 57) rgb(10, 73, 57) transparent transparent;
+}
+
+.message2 {
+    position: relative;
+    z-index: 3;
+    max-width: 200px;
+    padding: 10px;
+    word-break: break-all;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    float: right;
+    background-color: rgb(88, 92, 91);
+}
+
+.message2 h2 {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.message2 p {
+    font-size: 10px;
+    font-weight: 200;
+    color: rgb(223, 222, 222);
+    float: right;
+    margin-top: -10px;
+}
+
+.message2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-top: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(88, 92, 91) transparent transparent rgb(88, 92, 91);
+}
+
+
+/*********************FORM CONTAINER*******************/
+
+.FormContainer {
+    position: relative;
+    z-index: 3;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    background-color: var(--darkModeContainerContacts);
+    border-left: 1px solid rgb(44, 44, 44);
+}
+
+.svg {
+    padding: 10px;
+    border-radius: 5px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.svg:hover {
+    background-color: rgba(76, 77, 78, 0.452);
+}
+
+.FormContainer svg {
+    color: white;
+    font-size: 17px;
+}
+
+.FormContainer form {
+    width: 85%;
+}
+
+.FormContainer form input {
+    width: 100%;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background-color: transparent;
+    color: #b0b3b8;
+}
+
+.FormContainer form input:hover {
+    background-color: rgba(76, 77, 78, 0.452);
+}
+
+.FormContainer form input::placeholder {
+    font-size: 14px;
+}

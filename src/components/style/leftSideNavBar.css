@@ -1,0 +1,103 @@
+.LeftSideNavBar {
+    width: 50px;
+    height: 100%;
+    background-color: var(--darkModeLeftNav);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0 30px 0;
+}
+
+.center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.LeftSideNavBar svg {
+    fill: white;
+    font-size: 17px;
+}
+
+.topButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.topButtons div {
+    padding: 10px 13px;
+    position: relative;
+    cursor: pointer;
+}
+
+.topButtons div:hover {
+    background-color: rgba(76, 77, 78, 0.452);
+    border-radius: 10px;
+}
+
+.bottomButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottomButtons div {
+    padding: 10px 13px;
+    position: relative;
+    cursor: pointer;
+}
+
+.bottomButtons div:hover {
+    background-color: rgba(76, 77, 78, 0.452);
+    border-radius: 10px;
+}
+
+
+/***********************/
+
+.topButtons div::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    width: 4px;
+    height: 50%;
+    border-radius: 5px;
+    transform: scaleY(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+    background-color: rgb(67, 148, 67);
+}
+
+.topButtons div:hover::after {
+    transform: scaleY(1);
+    transform-origin: right;
+}
+
+.bottomButtons div::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    width: 4px;
+    height: 50%;
+    border-radius: 5px;
+    transform: scaleY(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+    background-color: rgb(67, 148, 67);
+}
+
+.bottomButtons div:hover::after {
+    transform: scaleY(1);
+    transform-origin: right;
+}
