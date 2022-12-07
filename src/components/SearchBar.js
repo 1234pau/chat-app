@@ -6,8 +6,6 @@ const SearchBar = ({search, setSearch}) => {
     e.preventDefault()
     setSearch(e.target.value)
     setSearch('')
-    
-
   }
   return (
     <form className='SearchBar' onSubmit={handleSearch}>

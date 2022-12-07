@@ -1,60 +1,16 @@
 import "./style/messages.css"
 
-const ContainerMessages = () => {
+const ContainerMessages = ({messages}) => {
   return (
     <div className="ContainerMessages">
-      <div className="div">
+      {messages.map((message)=>(
+        <div className="div">
         <div className="message message2">
-        <h2>hello what`s app what are you doing</h2>
-        <p>12:23</p>
+          <h2>{message.message}</h2>
+          <p>{new Date(message.timestamp?.toDate()).toUTCString()}</p>
+        </div>
       </div>
-      </div>
-      <div className="div">
-        <div className="message">
-        <h2>hello what`s app what are you doing</h2>
-        <p>12:23</p>
-      </div>
-      </div>
-      <div className="div">
-        <div className="message2">
-        <h2>hello what`s app what are you doing</h2>
-        <p>12:23</p>
-      </div>
-      </div>
-      <div className="div">
-        <div className="message message2">
-        <h2>hello what`s app what are you doing</h2>
-        <p>12:23</p>
-      </div>
-      </div>
-      
-      <div className="div">
-        <div className="message">
-        <h2>hello what`s app what are you doing</h2>
-        <p>12:23</p>
-      </div>
-      </div>
-      <div className="div">
-        <div className="message">
-        <h2>hello what`s app what are you doing</h2>
-        <p>12:23</p>
-      </div>
-      </div>
-      <div className="div">
-        <div className="message">
-        <h2>hello what`s app what are you doing</h2>
-        <p>12:23</p>
-      </div>
-      </div>
-      <div className="div">
-        <div className="message">
-        <h2>hello what`s app what are you doing</h2>
-        <p>12:23</p>
-      </div>
-      </div>
-      
-      
-    
+      ))}
       
     </div>
   )

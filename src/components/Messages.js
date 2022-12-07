@@ -5,18 +5,28 @@ import { BsEmojiSmile, BsPaperclip, BsMic} from "react-icons/bs";
 import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import db from "../firebase";
+import firebase from 'firebase/compat/app'
 
 const Messages = () => {
   const [input, setInput] = useState('')
   const {groupId} = useParams()
   const [groupName, setGroupName] = useState('')
+  const [messages, setMessages] = useState([])
 
   useEffect(()=>{
     if(groupId){
       db.collection("groops").doc(groupId).onSnapshot((snapshot) =>(
         setGroupName(snapshot.data().name)
-
       ))
+      db.collection('groops')
+        .doc(groupId)
+        .collection('messages')
+        .orderBy('timestamp', 'asc')
+        .onSnapshot((snapshot)=>
+        setMessages(snapshot.docs.map((doc) =>
+          doc.data()
+          ))
+        )
     }
 
   },[groupId])
@@ -25,6 +35,13 @@ const Messages = () => {
     e.preventDefault()
     setInput(e.target.value)
 
+    db.collection('groops')
+    .doc(groupId)
+    .collection('messages')
+    .add({
+      message: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
     setInput('')
   }
 
@@ -37,7 +54,7 @@ const Messages = () => {
             <p>{groupId}</p>
         </div>
       </div>
-      <ContainerMessages />
+      <ContainerMessages messages={messages}/>
       <div className="FormContainer">
         <div className="svg">
           <BsEmojiSmile />

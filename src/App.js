@@ -12,6 +12,7 @@ function App() {
           <ConversationsLinks />
           <Routes >
               <Route path="app/:groupId" element={<Messages />}/>
+              <Route path="/" element={<Messages />}/>
           </Routes>
         </Router>
     </div>
